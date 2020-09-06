@@ -1,4 +1,4 @@
-#this script will the eigenvectors to do the continuum fitting for each subsample
+#this script will allow the eigenvectors to do the continuum fitting for each subsample
 from sklearn.decomposition import IncrementalPCA
 import h5py
 import numpy as np
