@@ -15,4 +15,4 @@ ConvNet. My kernel sizes for each layer are 15, 5, 3, 3, and 3, respectively. Si
 functions, a pooling layer, and a fully-connected layer. 
 
 ## Contributors
-Thanks to Yinan Zhao and Professor Jian Ge for assistance in creating the neural network.
+Thanks to Yinan Zhao and Professor Jian Ge for assistance in creating the neural network and generating artificial spectra.
