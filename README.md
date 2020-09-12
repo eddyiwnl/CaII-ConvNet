@@ -1,5 +1,5 @@
 # CaII-ConvNet
-The purpose of this project is to use machine learning to discover CaIIλλ3934, 3969 absorption spectra from Sloan Digital Sky Survay (SDSS) Data Release 14. Ultimately, the 
+The purpose of this project is to use machine learning to discover CaIIλλ3934, 3969 absorption spectra from Sloan Digital Sky Survey (SDSS) Data Release 14. Ultimately, the 
 goal of studying absorption lines from the spectra of quasars is so sufficient data can be provided to answer questions about some very fundamental problems in cosmology and 
 astronomy. For example, questions about the formation and evolution of galaxies, and about the cosmic evolution of the UV ionizing background.
 
