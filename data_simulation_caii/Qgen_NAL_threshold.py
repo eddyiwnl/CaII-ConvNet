@@ -29,10 +29,10 @@ print('line28, wave', wave)
 wave=10**wave
 print('line30, wave', wave)
 
-for kkk in np.arange(24):
-    #kkk = kkk + 10
-    print('line33, kkk',kkk)
-    matrix_name='./Qgen_fit/Qgen_fit_zbin%s.hdf5' % kkk
+for bink in np.arange(24):
+    #bink = bink + 10
+    print('line33, bink',bink)
+    matrix_name='./Qgen_fit/Qgen_fit_zbin%s.hdf5' % bink
     with h5py.File(matrix_name,'r') as hf:
         spectra = hf["spectra"][:]
         error = hf["error"][:]
@@ -44,7 +44,7 @@ for kkk in np.arange(24):
     print('line40, fit',fit)
     print('line41, info',info)
     print('line42, norm_value',norm_value)
-    snr_name = './Qgen_SNR/Qgen_snr_zbin%s.hdf5' % kkk
+    snr_name = './Qgen_SNR/Qgen_snr_zbin%s.hdf5' % bink
     with h5py.File(snr_name,'r') as hf:
         snr_spectra = hf["SNR_info"][:]
     
@@ -110,7 +110,7 @@ for kkk in np.arange(24):
     print('line103, snr_spectra',snr_spectra)
 
     spno = spectra.shape[0]
-    print('range is %s to %s' % (z_stat[kkk], z_end[kkk]) )
+    print('range is %s to %s' % (z_stat[bink], z_end[bink]) )
     print('line 111, total number is %s' % spno)
     if spno >= 10:
         #random label
@@ -274,7 +274,7 @@ for kkk in np.arange(24):
 
         info_matrix = np.concatenate((info, abs_info), axis=1)
         info_matrix = np.concatenate((info_matrix, bad_spectra), axis=1)
-        outfile_name = './Qgen_training/training_gen%s.hdf5' % kkk
+        outfile_name = './Qgen_training/training_gen%s.hdf5' % bink
         with h5py.File(outfile_name,'w') as hf:
             hf.create_dataset("spectra",  data=spectra_matrix)
             hf.create_dataset("info",  data=info_matrix)
