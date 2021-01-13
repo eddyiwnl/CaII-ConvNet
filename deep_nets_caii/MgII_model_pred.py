@@ -95,19 +95,19 @@ print('line69 info_matrix_mis', info_matrix_mis)
 #print('y_pred', y_pred.shape)
 #print('info_final', info_final.shape)
 totalTrue=0
-#for kkk in np.arange(51162):
-for kkk in np.arange(10000):
-    if y_pred[kkk] == 1:
+#for bink in np.arange(51162):
+for bink in np.arange(10000):
+    if y_pred[bink] == 1:
         totalTrue+=1
-        #print('kkk=', kkk)
-        info_matrix_hit = info_final[kkk,:]
+        #print('bink=', bink)
+        info_matrix_hit = info_final[bink,:]
         #print('info_matrix_hit', info_matrix_hit)
-        #flux_hit = flux[kkk,:]
+        #flux_hit = flux[bink,:]
         #print('flux_hit=\n', flux_hit)
-        #spectra_hit = spectra[kkk,:]
+        #spectra_hit = spectra[bink,:]
         #print('spectra_hit=\n', spectra_hit)
 		
-#        #spSpec_sdss(int(info_final[kkk][2]), int(info_final[kkk][3]), int(info_final[kkk][4]), ('wave','flux', 'noise'))
+#        #spSpec_sdss(int(info_final[bink][2]), int(info_final[bink][3]), int(info_final[bink][4]), ('wave','flux', 'noise'))
 #print(totalTrue)
 #sp_data=spSpec_sdss(int(mjd_sub[i]), int(plate_sub[i]), int(fiber_sub[i]), ('wave','flux', 'noise'))
 
