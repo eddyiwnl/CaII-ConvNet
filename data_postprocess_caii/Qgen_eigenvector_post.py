@@ -8,10 +8,10 @@ from scipy import signal
 from numpy import linalg as LA
 from loadspec import *
 
-for kkk in np.arange(24):
-    print('this is bin %s' % kkk)
+for bink in np.arange(24):
+    print('this is bin %s' % bink)
 
-    filename = './Qgen_bins/Qgen_zbin%s.hdf5' % kkk
+    filename = './Qgen_bins/Qgen_zbin%s.hdf5' % bink
     with h5py.File(filename, 'r') as hf:
         spectra = hf["pca_sp"][:]
         error = hf["pca_error"][:]
@@ -79,7 +79,7 @@ for kkk in np.arange(24):
             print('remove %s quasar spectra' % (spectra_old.shape[0]-spectra.shape[0]))
 
 
-        eigenvector_name='./Qgen_eigen/eigenvector_%s.hdf5' %kkk
+        eigenvector_name='./Qgen_eigen/eigenvector_%s.hdf5' %bink
         with h5py.File(eigenvector_name,'w') as hf:
             hf.create_dataset("eigenvector",  data=ipca_comp)
 
