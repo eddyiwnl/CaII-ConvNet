@@ -18,9 +18,9 @@ z_stat = np.arange(24)*0.2
 z_end = np.arange(25)*0.2
 z_end = z_end[1:]
 
-for kkk in np.arange(24):
-    print('this is bin %s' % kkk)
-    filename = './Qgen_bins/Qgen_zbin%s.hdf5' % kkk
+for bink in np.arange(24):
+    print('this is bin %s' % bink)
+    filename = './Qgen_bins/Qgen_zbin%s.hdf5' % bink
     with h5py.File(filename, 'r') as hf:
          spectra = hf["pca_sp"][:]
          error = hf["pca_error"][:]
@@ -62,7 +62,7 @@ for kkk in np.arange(24):
         print('line59, spectra', spectra)
 
         #load the eigenvectors
-        eigenvector_name='./Qgen_eigen/eigenvector_%s.hdf5' %kkk
+        eigenvector_name='./Qgen_eigen/eigenvector_%s.hdf5' %bink
         with h5py.File(eigenvector_name,'r') as hf:
             ipca_comp = hf["eigenvector"][:]
 
@@ -83,8 +83,8 @@ for kkk in np.arange(24):
         #print(mean_spectra.shape)
         #exit()
 
-        zmin=z_stat[kkk]
-        zmax=z_end[kkk]
+        zmin=z_stat[bink]
+        zmax=z_end[bink]
         print('line83, zmin', zmin)
         print('line84, zmax', zmax)
 
@@ -157,7 +157,7 @@ for kkk in np.arange(24):
             print('line148, error_data', error_data)
 
 
-        matrix_name='./Qgen_fit/Qgen_fit_zbin%s.hdf5' % kkk
+        matrix_name='./Qgen_fit/Qgen_fit_zbin%s.hdf5' % bink
         with h5py.File(matrix_name,'w') as hf:
             hf.create_dataset("spectra",  data=spectra_data)
             hf.create_dataset("error",  data=error_data)
