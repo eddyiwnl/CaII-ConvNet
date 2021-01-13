@@ -15,8 +15,8 @@ wave=np.arange(no_grids)*dlogw+np.log10(wave_window[0])
 wave=10**wave
 
 
-for kkk in np.arange(24):
-    matrix_name='./Qgen_fit/Qgen_fit_zbin%s.hdf5' % kkk
+for bink in np.arange(24):
+    matrix_name='./Qgen_fit/Qgen_fit_zbin%s.hdf5' % bink
     with h5py.File(matrix_name,'r') as hf:
         spectra = hf["spectra"][:]
         error = hf["error"][:]
@@ -54,6 +54,6 @@ for kkk in np.arange(24):
         #plt.plot(wave,error_final)
         #plt.show()
 
-    outfile_name = './Qgen_SNR/Qgen_snr_zbin%s.hdf5' % kkk
+    outfile_name = './Qgen_SNR/Qgen_snr_zbin%s.hdf5' % bink
     with h5py.File(outfile_name,'w') as hf:
         hf.create_dataset("SNR_info",  data=snr_info)
