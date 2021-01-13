@@ -11,9 +11,9 @@ filelist=os.listdir('./Qgen_training/')
 filenum=len(filelist)
 
 	
-for kkk in np.arange(filenum):
-    outfile_name = './Qgen_training/'+filelist[kkk]
-    print(filelist[kkk])
+for bink in np.arange(filenum):
+    outfile_name = './Qgen_training/'+filelist[bink]
+    print(filelist[bink])
     with h5py.File(outfile_name,'r') as hf:
         spec_matrix = hf["spectra"][:]
         info_matrix = hf["info"][:]
@@ -45,7 +45,7 @@ for kkk in np.arange(filenum):
     print('label.shape', label.shape)
     if spec_matrix.shape[0] > 0:
         #concatenate them together
-        if kkk == 0:
+        if bink == 0:
             spec = spec_matrix
             info = info_matrix
             label_matrix = label
@@ -57,7 +57,7 @@ for kkk in np.arange(filenum):
             print('this is the positive: ', cc.shape[0])
            #'''
 
-        if kkk > 0:
+        if bink > 0:
             # print spec.shape, info.shape
             #print label_matrix.shape
             spec = np.concatenate((spec, spec_matrix), axis=0)
