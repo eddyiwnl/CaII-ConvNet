@@ -98,16 +98,16 @@ z_end = z_end[1:]
 
 wave_window = [3800.00, 9200.00]
 
-for kkk in np.arange(24):
-#for kkk in np.arange(1, 12):
-    print('line49, the z range is %s to %s' % (z_stat[kkk], z_end[kkk]))
-    print('this is bin %s' % kkk)
+for bink in np.arange(24):
+#for bink in np.arange(1, 12):
+    print('line49, the z range is %s to %s' % (z_stat[bink], z_end[bink]))
+    print('this is bin %s' % bink)
     #make the wave grid here:
     wave_window = [3800.00, 9200.00]
-    wave_pca=[wave_window[0]/(1+z_end[kkk]),wave_window[1]/(1+z_stat[kkk])]
+    wave_pca=[wave_window[0]/(1+z_end[bink]),wave_window[1]/(1+z_stat[bink])]
     print('line54, wave_pca', wave_pca)
 	
-    index=(zqso_sub >= z_stat[kkk]) & (zqso_sub < z_end[kkk])
+    index=(zqso_sub >= z_stat[bink]) & (zqso_sub < z_end[bink])
     print('line57, index = ', index.shape)
     print('line57, index = ', index)
     zqso_sub_hit=zqso_sub[index]
@@ -226,7 +226,7 @@ for kkk in np.arange(24):
 
     #info_matrix = np.concatenate((info_matrix,norm_factor), axis=1)
     #print info_matrix.shape
-    #matrix_name='./Qgen_bins/Qgen_zbin_dr12_prediction_%s.hdf5' % kkk
+    #matrix_name='./Qgen_bins/Qgen_zbin_dr12_prediction_%s.hdf5' % bink
     #with h5py.File(matrix_name,'w') as hf:
         #hf.create_dataset("wave",  data=wave)
         #hf.create_dataset("error",  data=error)
